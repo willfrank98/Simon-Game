@@ -61,12 +61,13 @@ void MainWindow::setup(){
 
 //If you hit the reset button then we reset the buttons and the gamestate.
 void MainWindow::resetUi(){
-    ui->startButton->setEnabled(true);
-    ui->resetButton->setEnabled(false);
-    ui->leftButton->setEnabled(true);
-    ui->rightButton->setEnabled(true);
-    ui->progressBar->setValue(0);
-
+	ui->startButton->setEnabled(true);
+	ui->resetButton->setEnabled(false);
+	ui->leftButton->setEnabled(false);
+	ui->rightButton->setEnabled(false);
+	ui->topButton->setEnabled(false);
+	ui->bottomButton->setEnabled(false);
+	ui->progressBar->setValue(0);
 }
 
 
@@ -76,7 +77,7 @@ void MainWindow::updateProgressBar(double progress){
 }
 
 void MainWindow::displayMessage(int round){
-	messageBox.setText(QStringLiteral("You messed up! You made it to round %1. Try again using the reset button.").arg(round));
+	messageBox.setText(QStringLiteral("You messed up! You made it to round %1. Try again using the start button.").arg(round));
     messageBox.exec();
 }
 
